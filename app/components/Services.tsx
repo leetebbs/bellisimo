@@ -1,19 +1,25 @@
-import { Card, CardHeader, CardTitle, CardDescription } from "@/components/ui/card"
+import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card"
+import { Button } from "@/components/ui/button"
+import Link from "next/link"
 
 const services = [
   {
+    id: 1,
     title: "Manicure & Pedicure",
     description: "Pamper your hands and feet with our luxurious nail treatments.",
   },
   {
+    id: 2,
     title: "Facial Treatments",
     description: "Rejuvenate your skin with our customized facial treatments.",
   },
   {
-    title: "Teeth Whitening",
-    description: "Get the perfect smile with our expert teeth whitening services.",
+    id: 3,
+    title: "Hair Styling",
+    description: "Get the perfect look with our expert hair styling services.",
   },
   {
+    id: 4,
     title: "Makeup Application",
     description: "Enhance your beauty with our professional makeup services.",
   },
@@ -41,6 +47,11 @@ export default function Services() {
                   <CardTitle>{service.title}</CardTitle>
                   <CardDescription>{service.description}</CardDescription>
                 </CardHeader>
+                <CardContent>
+                  <Button asChild className="w-full">
+                    <Link href={`/book?service=${service.id}`}>Book Now</Link>
+                  </Button>
+                </CardContent>
               </Card>
             ))}
           </div>

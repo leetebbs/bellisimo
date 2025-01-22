@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button"
+import Link from 'next/link'
 
 export default function Hero() {
   return (
@@ -9,7 +10,7 @@ export default function Hero() {
             <div className="sm:text-center lg:text-left">
               <h1 className="text-4xl tracking-tight font-extrabold text-gray-900 sm:text-5xl md:text-6xl">
                 <span className="block xl:inline">Discover Your</span>{" "}
-                <span className="block text-pink-500 xl:inline">True Beauty</span>
+                <span className="block text-pink-600 xl:inline">True Beauty</span>
               </h1>
               <p className="mt-3 text-base text-gray-500 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0">
                 Experience luxurious beauty treatments and nail services at Bellisimo. Our expert technicians are
@@ -17,7 +18,9 @@ export default function Hero() {
               </p>
               <div className="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start">
                 <div className="rounded-md shadow">
-                  <Button size="lg">Book Appointment</Button>
+                  <Button asChild size="lg">
+                    <Link href="/book">Book Appointment</Link>
+                  </Button>
                 </div>
                 <div className="mt-3 sm:mt-0 sm:ml-3">
                   <Button variant="outline" size="lg">
@@ -39,4 +42,3 @@ export default function Hero() {
     </div>
   )
 }
-

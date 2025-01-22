@@ -1,6 +1,7 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
+import { useSearchParams } from "next/navigation"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
@@ -13,7 +14,7 @@ const services = [
   { id: "manicure", name: "Manicure", duration: 30 },
   { id: "pedicure", name: "Pedicure", duration: 45 },
   { id: "facial", name: "Facial Treatment", duration: 60 },
-  { id: "teeth", name: "Teeth Whitening", duration: 60 },
+  { id: "haircut", name: "Haircut and Styling", duration: 60 },
 ]
 
 const timeSlots = ["09:00", "10:00", "11:00", "12:00", "13:00", "14:00", "15:00", "16:00", "17:00"]
@@ -26,6 +27,15 @@ export default function BookingPage() {
   const [date, setDate] = useState<Date | undefined>(undefined)
   const [time, setTime] = useState("")
   const { toast } = useToast()
+
+  const searchParams = useSearchParams()
+  const serviceParam = searchParams.get("service")
+
+  useEffect(() => {
+    if (serviceParam && services.some((s) => s.id === serviceParam)) {
+      setService(serviceParam)
+    }
+  }, [serviceParam])
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()

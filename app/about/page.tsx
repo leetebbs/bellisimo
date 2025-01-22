@@ -1,5 +1,6 @@
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
+import Link from "next/link"
 
 export default function AboutPage() {
   return (
@@ -99,7 +100,9 @@ export default function AboutPage() {
             you look and feel your best.
           </p>
           <div className="mt-8">
-            <Button size="lg">Book an Appointment</Button>
+            <Button asChild size="lg">
+              <Link href="/book">Book an Appointment</Link>
+            </Button>
           </div>
         </div>
       </div>
