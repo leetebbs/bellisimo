@@ -16,9 +16,9 @@ export default function Header() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-6">
           <div className="flex justify-start lg:w-0 lg:flex-1">
-            <Link href="/">
+          <Link href="/">
               <span className="sr-only">Bellisimo</span>
-              <span className="text-3xl font-extrabold text-pink-600">Bellisimo</span>
+              <img src="/name1.png" alt="Bellisimo" className="text-3xl font-extrabold text-pink-600" />
             </Link>
           </div>
           <nav className="hidden md:flex space-x-10">
